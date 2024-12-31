@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 {
     'name': 'POS Crypto Payments',
-    'version': '1.0',
+    'version': '17.0',
+    'author': 'MLR - MI Lightning Rod',
     'category': 'Sales/Point of Sale',
     'sequence': 6,
     'summary': 'Integrate your POS with Crypto on-chain and payments',
