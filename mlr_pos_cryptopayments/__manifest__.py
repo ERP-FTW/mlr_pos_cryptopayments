@@ -7,7 +7,7 @@
     'sequence': 6,
     'summary': 'Integrate your POS with Crypto on-chain and payments',
     'description': '',
-    'images': ['static/src/description/icon.png'],
+    'images': ['static/description/icon.png'],
     'depends': ['point_of_sale','account','pos_restaurant'],
     'data': [
         "views/pos_payment.xml",
