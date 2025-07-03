@@ -1,23 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <templates id="template" xml:space="preserve">
-    <t t-name="PaymentScreenPaymentLinesCryptoPatch"
-       t-inherit="point_of_sale.PaymentScreenPaymentLines"
-       t-inherit-mode="extension"
-       owl="1">
+  <t t-name="PaymentScreenPaymentLinesCryptoPatch"
+     t-inherit="point_of_sale.PaymentScreenPaymentLines"
+     t-inherit-mode="extension"
+     owl="1">
 
-        <!-- Match the stable block inside the payment_status layout -->
-        <xpath expr="//div[contains(@class, 'paymentline') and contains(@class, 'electronic_payment')]" position="inside">
-            <t t-if="line.payment_status == 'cryptowaiting'">
-                <!--
-                <div class="electronic_status">
-                    <t t-esc='line.crypto_payment_status'/>
-                </div>
-                <div class="button show_receipt highlight" title="Show receipt" t-on-click="() => this.showTempScreen('BillScreen')">
-                    Show receipt
-                </div>
-        -->
-            </t>
-        </xpath>
+    <!-- Inject after 'reversed' block -->
+    <xpath expr="//t[.//div[contains(text(), 'Payment reversed')]]" position="after">
+      <t t-if="line.payment_status == 'cryptowaiting'">
+        <div class="paymentline electronic_payment">
+          <div class="electronic_status">
+            <t t-esc="line.crypto_payment_status"/>
+          </div>
+          <div class="button show_receipt highlight" title="Show receipt"
+               t-on-click="() => this.showTempScreen('BillScreen')">
+            Show receipt
+          </div>
+        </div>
+      </t>
+    </xpath>
 
-    </t>
+  </t>
 </templates>
