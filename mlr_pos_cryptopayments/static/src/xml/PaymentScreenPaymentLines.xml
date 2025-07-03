@@ -8,14 +8,14 @@
         <!-- Match the stable block inside the payment_status layout -->
         <xpath expr="//div[contains(@class, 'paymentline') and contains(@class, 'electronic_payment')]" position="inside">
             <t t-if="line.payment_status == 'cryptowaiting'">
-                <div class="electronic_status text-warning">
-                    <t t-esc="line.crypto_payment_status or 'Waiting for crypto payment confirmation...'" />
+                <!--
+                <div class="electronic_status">
+                    <t t-esc='line.crypto_payment_status'/>
                 </div>
-                <div class="button highlight text-bg-warning"
-                     title="Check Status"
-                     t-on-click="() => this.props.sendPaymentRequest(line)">
-                    Retry
+                <div class="button show_receipt highlight" title="Show receipt" t-on-click="() => this.showTempScreen('BillScreen')">
+                    Show receipt
                 </div>
+        -->
             </t>
         </xpath>
 
